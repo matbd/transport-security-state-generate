@@ -392,7 +392,7 @@ func checkCertsInPinsets(pinsets []pinset, pins []pin) error {
 
 	for pinName := range pinNames {
 		if _, ok := usedPinNames[pinName]; !ok {
-			return fmt.Errorf("unused pin: %s", pinName)
+			fmt.Fprintf(os.Stderr, "Warning: unused pin: %s\n", pinName)
 		}
 	}
 
